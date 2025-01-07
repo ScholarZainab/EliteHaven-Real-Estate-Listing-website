@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Estate Classified</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Real Estate Classified</h1>
+    <button id="dashboard-btn">Dashboard</button>
+  </header>
+
+  <main>
+    <!-- Featured Premium Properties -->
+    <section id="premium-properties">
+      <h2>Featured Premium Properties</h2>
+      <div id="properties-list"></div>
+    </section>
+
+    <!-- User Dashboard -->
+    <section id="user-dashboard" class="hidden">
+      <h2>Your Properties</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <div id="user-pagination-controls"></div>
+        <tbody id="dashboard-properties"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

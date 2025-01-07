@@ -1,0 +1,66 @@
+/* Common Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f9;
+}
+
+header {
+  background: #0073e6;
+  color: white;
+  text-align: center;
+  padding: 1em;
+}
+
+header button {
+  margin: 0.5em;
+  background: white;
+  color: #0073e6;
+  border: none;
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+
+header button:hover {
+  background: #005bb5;
+  color: white;
+}
+
+main {
+  padding: 1em;
+}
+
+.hidden {
+  display: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 0.5em;
+}
+
+th {
+  background: #f4f4f9;
+}
+
+button {
+  padding: 0.5em 1em;
+  margin: 0.2em;
+  cursor: pointer;
+}
+
+button.approve {
+  background: #28a745;
+  color: white;
+}
+
+button.reject {
+  background: #dc3545;
+  color: white;
+}

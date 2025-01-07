@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Admin Dashboard</h1>
+  </header>
+
+  <main>
+    <h2>Pending Properties</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Price</th>
+          <th>Owner</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <div id="pagination-controls"></div>
+      <tbody id="admin-properties"></tbody>
+    </table>
+  </main>
+  <div id="filters">
+    <label>Min Price: <input type="number" id="filter-price-min"></label>
+    <label>Max Price: <input type="number" id="filter-price-max"></label>
+    <label>Property Type: 
+      <select id="filter-type">
+        <option value="">All</option>
+        <option value="Residential">Residential</option>
+        <option value="Commercial">Commercial</option>
+      </select>
+    </label>
+    <button id="apply-filters-btn">Apply Filters</button>
+  </div>
+  
+  <script src="admin.js"></script>
+</body>
+</html>
