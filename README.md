@@ -1,3 +1,1 @@
- Hey! I am Zainab Akinola and this is my portfolio project in Alx Nigeria.
-
- I am working on a Real Estate Listing Website using html,javascript and css
+ Hey! I am Zainab Akinola, i am from Nigeria  and this is my portfolio project in Alx Software Engineering .
