@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Your Property</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #6a11cb, #2575fc);
+            color: #fff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #6a11cb;
+        }
+
+        form label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        form input, form textarea, form select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .option label {
+            margin: 0 10px 0 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .option button {
+            background: #6a11cb;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-left: auto;
+        }
+
+        .option button:hover {
+            background: #2575fc;
+        }
+
+        .submit-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .submit-button button {
+            background: #ff5722;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .submit-button button:hover {
+            background: #e64a19;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .cart, .history {
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sell Your Property</h1>
+        <form id="sellPropertyForm">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="propertyType">Property Type:</label>
+            <select id="propertyType" name="propertyType" required>
+                <option value="House">House</option>
+                <option value="Apartment">Apartment</option>
+                <option value="Land">Land</option>
+            </select>
+
+            <label for="propertyDescription">Property Description:</label>
+            <textarea id="propertyDescription" name="propertyDescription" rows="4" required></textarea>
+
+            <label for="expectedPrice">Expected Price:</label>
+            <input type="number" id="expectedPrice" name="expectedPrice" required>
+
+            <label for="propertyImages">Upload Pictures (2-10):</label>
+            <input type="file" id="propertyImages" name="propertyImages" multiple accept="image/*" required>
+        </form>
+
+        <div class="options">
+            <div class="option">
+                <label>Free:</label>
+                <button id="freeOption">Select</button>
+            </div>
+            <div class="option">
+                <label>Gold (N20,000/month):</label>
+                <button id="goldOption">Select</button>
+            </div>
+            <div class="option">
+                <label>Silver (N10,000/month):</label>
+                <button id="silverOption">Select</button>
+            </div>
+            <div class="option">
+                <label>Bronze (N5,000/month):</label>
+                <button id="bronzeOption">Select</button>
+            </div>
+        </div>
+
+        <div class="submit-button">
+            <button id="submitForm">Submit</button>
+        </div>
+
+        <div class="cart hidden">
+            <h2>Your Cart</h2>
+            <ul id="cartItems"></ul>
+            <button id="checkout">Checkout</button>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('sellPropertyForm');
+        const cartItems = document.getElementById('cartItems');
+        const submitButton = document.getElementById('submitForm');
+        let selectedOption = null;
+
+        // Add event listeners for pricing options
+        document.getElementById('freeOption').addEventListener('click', () => selectOption('Free'));
+        document.getElementById('goldOption').addEventListener('click', () => selectOption('Gold'));
+        document.getElementById('silverOption').addEventListener('click', () => selectOption('Silver'));
+        document.getElementById('bronzeOption').addEventListener('click', () => selectOption('Bronze'));
+
+        submitButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (!selectedOption) {
+                alert('Please select a posting option.');
+                return;
+            }
+            if (!form.reportValidity()) {
+                alert('Please fill out all required fields.');
+                return;
+            }
+            if (selectedOption !== 'Free') {
+                alert(`Redirecting to payment gateway for the ${selectedOption} plan.`);
+                window.location.href = `payment-gateway.html?plan=${selectedOption}`;
+            } else {
+                alert('Form submitted successfully for Free option.');
+            }
+        });
+
+        function selectOption(option) {
+            selectedOption = option;
+            alert(`${option} option selected.`);
+        }
+    </script>
+</body>
+</html>

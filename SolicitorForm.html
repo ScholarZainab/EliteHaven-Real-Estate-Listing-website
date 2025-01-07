@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitor Directory</title>
+  <link rel="stylesheet" href="css/SolicitorForm.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" id="brand-name">EliteHaven</a>
+      <ul id="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about-us.html">About us</a></li>
+      <li><a href="#">Buy</a></li>
+      <li><a href="property.html">Sell</a></li>
+      <li><a href="contact.html">Book a consultancy</a></li>
+      <li><a href="contact.html">Contact us</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="">Sign up/Sign in</a></li>
+        </ul>
+    </nav>
+</header>
+  <h1>Solicitor Registration</h1>
+  <form id="solicitorForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="yearOfCall">Year of Call:</label>
+    <input type="number" id="yearOfCall" name="yearOfCall" required><br>
+
+    <label for="state">State:</label>
+    <select id="state" name="state" required>
+      <option value="">Select State</option>
+      <option value="Abia">Abia</option>
+      <option value="Adamawa">Adamawa</option>
+      <option value="Akwa Ibom">Akwa Ibom</option>
+      <option value="Anambra">Anambra</option>
+      <option value="Bauchi">Bauchi</option>
+      <option value="Bayelsa">Bayelsa</option>
+      <option value="Benue">Benue</option>
+      <option value="Borno">Borno</option>
+      <option value="Cross River">Cross River</option>
+      <option value="Delta">Delta</option>
+      <option value="Ebonyi">Ebonyi</option>
+      <option value="Edo">Edo</option>
+      <option value="Ekiti">Ekiti</option>
+      <option value="Enugu">Enugu</option>
+      <option value="Gombe">Gombe</option>
+      <option value="Imo">Imo</option>
+      <option value="Jigawa">Jigawa</option>
+      <option value="Kaduna">Kaduna</option>
+      <option value="Kano">Kano</option>
+      <option value="Katsina">Katsina</option>
+      <option value="Kebbi">Kebbi</option>
+      <option value="Kogi">Kogi</option>
+      <option value="Kwara">Kwara</option>
+      <option value="Lagos">Lagos</option>
+      <option value="Nasarawa">Nasarawa</option>
+      <option value="Niger">Niger</option>
+      <option value="Ogun">Ogun</option>
+      <option value="Ondo">Ondo</option>
+      <option value="Osun">Osun</option>
+      <option value="Oyo">Oyo</option>
+      <option value="Plateau">Plateau</option>
+      <option value="Rivers">Rivers</option>
+      <option value="Sokoto">Sokoto</option>
+      <option value="Taraba">Taraba</option>
+      <option value="Yobe">Yobe</option>
+      <option value="Zamfara">Zamfara</option>
+      <option value="FCT">Federal Capital Territory</option>
+    </select><br>
+
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address" required><br>
+
+    <button type="button" id="submitSolicitor">Submit</button>
+  </form>
+
+  <h2>Search for Solicitors</h2>
+  <label for="searchState">Select State:</label>
+  <select id="searchState">
+    <option value="">Select State</option>
+    <option value="Abia">Abia</option>
+    <option value="Adamawa">Adamawa</option>
+    <option value="Akwa Ibom">Akwa Ibom</option>
+    <option value="Anambra">Anambra</option>
+    <option value="Bauchi">Bauchi</option>
+    <option value="Bayelsa">Bayelsa</option>
+    <option value="Benue">Benue</option>
+    <option value="Borno">Borno</option>
+    <option value="Cross River">Cross River</option>
+    <option value="Delta">Delta</option>
+    <option value="Ebonyi">Ebonyi</option>
+    <option value="Edo">Edo</option>
+    <option value="Ekiti">Ekiti</option>
+    <option value="Enugu">Enugu</option>
+    <option value="Gombe">Gombe</option>
+    <option value="Imo">Imo</option>
+    <option value="Jigawa">Jigawa</option>
+    <option value="Kaduna">Kaduna</option>
+    <option value="Kano">Kano</option>
+    <option value="Katsina">Katsina</option>
+    <option value="Kebbi">Kebbi</option>
+    <option value="Kogi">Kogi</option>
+    <option value="Kwara">Kwara</option>
+    <option value="Lagos">Lagos</option>
+    <option value="Nasarawa">Nasarawa</option>
+    <option value="Niger">Niger</option>
+    <option value="Ogun">Ogun</option>
+    <option value="Ondo">Ondo</option>
+    <option value="Osun">Osun</option>
+    <option value="Oyo">Oyo</option>
+    <option value="Plateau">Plateau</option>
+    <option value="Rivers">Rivers</option>
+    <option value="Sokoto">Sokoto</option>
+    <option value="Taraba">Taraba</option>
+    <option value="Yobe">Yobe</option>
+    <option value="Zamfara">Zamfara</option>
+    <option value="FCT">Federal Capital Territory</option>
+  </select>
+  <button type="button" id="searchSolicitors">Search</button>
+
+  <div id="searchResults"></div>
+  <footer>
+    <div class="footer-container">
+      <!-- Section 1: Contact Info -->
+      <div class="footer-section contact-info">
+        <h3>Contact Info</h3>
+        <p><strong>Address:</strong>42, Pump & Sell Bus Stop, Addo,</p>
+              <p>Ajah/Lekki, Lagos State</p> 
+        <p><strong>Phone:</strong> +2348032493960</p>
+        <p><strong>Email:</strong> choicelandsolicitors9@gmail.com</p>
+      </div>
+
+      <!-- Section 2: Services -->
+      <div class="footer-section services">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="#">Verified Property Listings</a></li>
+          <li><a href="#">Property Verification</a></li>
+          <li><a href="#">Expert Advice for Buyers</a></li>
+          <li><a href="#">Real Estate Investment Consultancy</a></li>
+          <li><a href="#">Due Diligence</a></li>
+        </ul>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="footer-section ">
+        <h3></h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="#">Buy</a></li>
+          <li><a href="property.html">Sell</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+          <li><a href="blog.html">Blog</a></li>
+
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copyright Section -->
+    <div class="footer-bottom">
+      <p>&copy; 2024 Elitehaven. All Rights Reserved.</p>
+    </div>
+  </footer>
+ 
+<script src="script.js"></script>
+</body>
+</html>
+
+  <script src="js/SolicitorForm.js"></script>
+</body>
+</html>
