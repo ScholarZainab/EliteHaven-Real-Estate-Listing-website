@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Estate Classified Ad</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>EliteHaven Real Estate Listed Property</h1>
+    <button id="sell-btn">Sell Property</button>
+  </header>
+
+<section id="submit-property-form" class="hidden">
+  <h2>Submit Your Property</h2>
+  <!-- Instructions for Unauthenticated Users -->
+  <div id="auth-message" class="auth-message hidden">
+    <p>
+      Only registered users can submit properties. Please 
+      <a href="/signin" id="signin-link">Sign In</a> or 
+      <a href="/signup" id="signup-link">Sign Up</a>.
+    </p>
+  </div>
+
+  <!-- Form for Authenticated Users -->
+  <form id="property-form" class="hidden">
+    <label>
+      Type of Property:
+      <input type="text" name="propertyType" placeholder="e.g., Residential" required>
+    </label>
+
+    <label>
+      Price ($):
+      <input type="number" name="price" min="20000000" required>
+    </label>
+
+    <label>
+      Negotiable:
+      <select name="negotiable">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+    </label>
+
+    <label>
+      Description:
+      <textarea name="description" placeholder="Write a short description of the property" required></textarea>
+    </label>
+
+    <label>
+      State:
+      <input type="text" name="state" placeholder="e.g., Lagos" required>
+    </label>
+
+    <label>
+      City:
+      <input type="text" name="city" placeholder="e.g., Lekki" required>
+    </label>
+
+    <label>
+      Ownership:
+      <select name="ownership" required>
+        <option value="owner">Owner</option>
+        <option value="attorney">Attorney</option>
+      </select>
+    </label>
+
+    <label>
+      Property Documents:
+      <textarea name="documents" placeholder="Describe the property documents"></textarea>
+    </label>
+
+    <label>
+      Upload Images (2-10):
+      <input type="file" name="images" min=2 accept="image/*" multiple required>
+    </label>
+
+    <label>
+      Listing Type:
+      <select name="listingType" required>
+        <option value="free">Free</option>
+        <option value="Gold">Gold</option>
+        <option value="Silver">Silver</option>
+        <option value="Bronze">Bronze</option>
+      </select>
+    </label>
+
+    <button type="submit">Submit Property</button>
+  </form>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
